@@ -4,13 +4,8 @@ import {commerce} from '../lib/commerce';
 import ProductList from '../components/ProductList';
 import CategoryList from '../components/CategoryList';
 
-
-
-
-
 export default function Home({merchant, categories, products}) {
  
-
   return (
  
     <React.Fragment>
@@ -40,7 +35,6 @@ export async function getStaticProps() {
   const {data:categories} = await commerce.categories.list();
   // products are stored in data section of object
   const {data: products} = await commerce.products.list();
-  console.log(categories)
 
   return {
     props: {

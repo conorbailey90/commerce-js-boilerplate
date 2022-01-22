@@ -7,7 +7,7 @@ function CartItem({id, name, quantity, line_total}){
 
     const handleUpdateCart = ({cart}) => setCart(cart);
 
-    const removeItem = () => commerce.cart.remove(id).then(handleUpdateCart)
+    const removeItem = () => commerce.cart.remove(id).then(handleUpdateCart);
 
     const decrementQuantity = () => {
         quantity >  1 ? commerce.cart.update(id, {quantity: quantity - 1}).then(handleUpdateCart) :
@@ -33,8 +33,6 @@ function CartItem({id, name, quantity, line_total}){
 
 export default function CartPage(){
     const {line_items, subtotal} = useCartState();
-
-   
 
     const isEmpty = line_items.length === 0;
 
